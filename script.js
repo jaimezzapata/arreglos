@@ -1,5 +1,5 @@
 /* Una colección de datos, variables, funciones, objetos, etc */
-// let arreglo = [] 
+// let arreglo = []
 // let nuevoArreglo = new Array(3,4,5,3)
 // console.log(arreglo);
 // console.log(nuevoArreglo);
@@ -8,8 +8,8 @@
 // }
 // let variasCosas = [1, 1.4, "hola", [2, 2], true, saludar]
 // let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-let numeros = [2, 4, 6, 8, 10]
-let letras = ['A', 'B', 'C', 'D']
+// let numeros = [2, 4, 6, 8, 10]
+// let letras = ['A', 'B', 'C', 'D']
 /*
     Tamaño: -> Cantidad de elementos dentro del arreglo
     Posiciones: -> Ubicación donde está cada elemento (posición 0)
@@ -57,7 +57,7 @@ let letras = ['A', 'B', 'C', 'D']
 // console.log(nuevoArregloMap);
 
 // let numerosforEach = numeros.forEach((numero)=> {
-//     console.log(numero * 4);    
+//     console.log(numero * 4);
 // })
 // console.log(numerosforEach);
 
@@ -102,9 +102,10 @@ let letras = ['A', 'B', 'C', 'D']
 
 
 /* ...: operador de propagación o Spread Operator */
+/* Desestructuración de datos (objetos y arreglos) */
 
 /* Objetos de JavaScript */
-/* 
+/*
     Objeto es una colección de datos (atributos y métodos) (uno o muchos)
     Los objetos se construyen con: llave y valor
     llave: atributo (nombre, telefono, correo, etc)
@@ -113,17 +114,62 @@ let letras = ['A', 'B', 'C', 'D']
     - Objeto Constructor
  */
 
-let persona = {
-    nombre: "Jaime",
-    edad: 33,
-    correo: "correo@correo.com",
-    trabajando: true,
-    programar: function () {
-        console.log("Estoy programando....");
-    },
-    gustos: ["Programar", "Leer", "Ver peliculas", "Ver series"],
-    amigos: {
-        nombre: "Juan",
-        edad: 28,
+// let persona = {
+//     nombre: "Jaime",
+//     edad: 33,
+//     correo: "correo@correo.com",
+//     trabajando: true,
+//     programar: function () {
+//         console.log("Estoy programando....");
+//     },
+//     gustos: ["Programar", "Leer", "Ver peliculas", "Ver series"],
+//     amigos: {
+//         nombre: "Juan",
+//         edad: 28,
+//     }
+// }
+// console.log(persona);
+// console.log(persona.nombre);
+// if (persona.trabajando) {
+//     console.log("La persona " + persona.nombre + " está trabajando");
+// }
+// console.log(persona.gustos[2]);
+// persona.programar()
+
+let personas = []
+let persona = {}
+let repetir = true
+while (repetir) {
+    let nombre = prompt("Ingrese el nombre de la persona")
+    let edad = prompt("Ingrese la edad de la persona")
+    let salario = prompt("Ingrese el salario de la persona")
+    persona = {
+        nombre,
+        edad,
+        salario
+    }
+    personas.push(persona)
+    console.log(personas);
+    let menoresEdad = personas.filter((element) => element.edad < 18)
+    console.log(menoresEdad);
+    let opcion = prompt("Desea agregar otra persona? (s/n)")
+    if (opcion == "n") {
+        repetir = false
     }
 }
+
+
+/* 
+Desarrollar un sistema de notas para un grupo de estudiantes
+-Registrar un estudiante
+-Buscar un estudiante (documento y/o por nombre)
+-Mostrar listado de estudiantes que aprueban
+-Mostrar listado de estudiantes que reprueban
+-Eliminar un estudiante
+-Ordernar los estudiantes por nombre
+-Validar si un estudiante está matriculado
+-Modificar un estudiante
+
+El sistema se debe desarrollar con funciones
+*/
+
