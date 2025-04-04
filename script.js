@@ -61,11 +61,69 @@ let letras = ['A', 'B', 'C', 'D']
 // })
 // console.log(numerosforEach);
 
-let numeroPares = numeros.every((numero) => {
-    if (numero % 2 == 0) {
-        return numero
-    }
-})
+// let numeroPares = numeros.filter((numero) => {
+//     if (numero % 2 == 0) {
+//         return numero
+//     }
+// })
 
-console.log(numeroPares);
-console.log(numeros);
+// console.log(numeroPares);
+// console.log(numeros);
+
+// console.log(numeros);
+// numeros.pop()
+// console.log(numeros);
+// numeros.pop()
+// console.log(numeros);
+
+// console.log(numeros)
+// numeros.shift()
+// console.log(numeros);
+// numeros.shift()
+// console.log(numeros);
+
+// console.log(numeros)
+// numeros.push("A")
+// console.log(numeros);
+// numeros.push(true)
+// console.log(numeros);
+// numeros.push(function saludar(){})
+// console.log(numeros);
+
+// console.log(numeros);
+// numeros.unshift('A')
+// console.log(numeros);
+// numeros.unshift(false)
+// console.log(numeros);
+
+// console.log(numeros);
+// numeros.splice(1, 1)
+// console.log(numeros);
+
+
+/* ...: operador de propagación o Spread Operator */
+
+/* Objetos de JavaScript */
+/* 
+    Objeto es una colección de datos (atributos y métodos) (uno o muchos)
+    Los objetos se construyen con: llave y valor
+    llave: atributo (nombre, telefono, correo, etc)
+    valor: es el contenido de la llave: (Jaime Zapata, 13452345234, correo@correo.com)
+    - Objeto Literal
+    - Objeto Constructor
+ */
+
+let persona = {
+    nombre: "Jaime",
+    edad: 33,
+    correo: "correo@correo.com",
+    trabajando: true,
+    programar: function () {
+        console.log("Estoy programando....");
+    },
+    gustos: ["Programar", "Leer", "Ver peliculas", "Ver series"],
+    amigos: {
+        nombre: "Juan",
+        edad: 28,
+    }
+}
