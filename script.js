@@ -136,27 +136,27 @@
 // console.log(persona.gustos[2]);
 // persona.programar()
 
-let personas = []
-let persona = {}
-let repetir = true
-while (repetir) {
-    let nombre = prompt("Ingrese el nombre de la persona")
-    let edad = prompt("Ingrese la edad de la persona")
-    let salario = prompt("Ingrese el salario de la persona")
-    persona = {
-        nombre,
-        edad,
-        salario
-    }
-    personas.push(persona)
-    console.log(personas);
-    let menoresEdad = personas.filter((element) => element.edad < 18)
-    console.log(menoresEdad);
-    let opcion = prompt("Desea agregar otra persona? (s/n)")
-    if (opcion == "n") {
-        repetir = false
-    }
-}
+// let personas = []
+// let persona = {}
+// let repetir = true
+// while (repetir) {
+//     let nombre = prompt("Ingrese el nombre de la persona")
+//     let edad = prompt("Ingrese la edad de la persona")
+//     let salario = prompt("Ingrese el salario de la persona")
+//     persona = {
+//         nombre,
+//         edad,
+//         salario
+//     }
+//     personas.push(persona)
+//     console.log(personas);
+//     let menoresEdad = personas.filter((element) => element.edad < 18)
+//     console.log(menoresEdad);
+//     let opcion = prompt("Desea agregar otra persona? (s/n)")
+//     if (opcion == "n") {
+//         repetir = false
+//     }
+// }
 
 
 /* 
@@ -173,3 +173,51 @@ Desarrollar un sistema de notas para un grupo de estudiantes
 El sistema se debe desarrollar con funciones
 */
 
+
+let estudiantes = []
+let estudiante = {}
+let repetir = true
+let nombreEstudiante, documentoEstudiante, notaMateria, estadoMatricula
+
+while (repetir) {
+    let opcion = prompt("Seleccione:\n1 - Registrar un estudiante\n2 - Buscar estudiante (documento)\n3 - Buscar estudiante (nombre)\n4 - Estudiantes que pierden\n5 - Estudiantes que ganan\n6 - Eliminar un estudiante\n7 - Ordenar estudiantes\n8 - Validar matricula\n9 - Editar estudiante\n10 - Salir")
+    switch (opcion) {
+        case "1":
+            registrarEstudiante()
+            break;
+        case "2":
+            break;
+        case "3":
+            break;
+        case "4":
+            break;
+        case "5":
+            break;
+        case "6":
+            break;
+        case "7":
+            break;
+        case "8":
+            break;
+        case "9":
+            break;
+        case "10":
+            repetir = false
+            break;
+    }
+}
+
+function registrarEstudiante() {
+    nombreEstudiante = prompt("Ingrese el nombre del Estudiante")
+    documentoEstudiante = prompt("Ingrese el documento del estudiante: ")
+    notaMateria = Number(prompt('Ingrese la nota del estudiante: '))
+    estadoMatricula = prompt("Seleccione:\nM - Matriculado\nN - No matriculado")
+    estudiante = {
+        nombre: nombreEstudiante,
+        documento: documentoEstudiante,
+        nota: notaMateria,
+        estado: estadoMatricula
+    }
+    estudiantes.unshift(estudiante)
+    console.log(estudiantes);
+}
