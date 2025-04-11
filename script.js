@@ -175,7 +175,27 @@ El sistema se debe desarrollar con funciones
 
 
 
-let estudiantes = []
+let estudiantes = [
+    {
+        nombre: "Jaime Zapata",
+        documento: 10203040,
+        estado: "M",
+        nota: 4
+    },
+    {
+        nombre: "Daniela Aguiar",
+        documento: 12345677,
+        estado: "M",
+        nota: 4
+    },
+    {
+        nombre: "Daniela Aguiar",
+        documento: 56745676,
+        estado: "N",
+        nota: 5
+    },
+]
+
 let estudiante = {}
 let repetir = true
 let nombreEstudiante, documentoEstudiante, notaMateria, estadoMatricula
@@ -190,6 +210,7 @@ while (repetir) {
             buscarPorDocumento()
             break;
         case "3":
+            buscarPorNombre()
             break;
         case "4":
             break;
@@ -238,3 +259,11 @@ function buscarPorDocumento() {
     /* arreglo.filter((variable)=> condición) */
 }
 
+function buscarPorNombre() {
+    nombreEstudiante = prompt("Ingrese un nombre: ")
+    estudiantes.filter((estudiante) => {
+        if (nombreEstudiante === estudiante.nombre) {
+            console.log(estudiante);
+        }
+    })
+}
