@@ -174,6 +174,7 @@ El sistema se debe desarrollar con funciones
 */
 
 
+
 let estudiantes = []
 let estudiante = {}
 let repetir = true
@@ -186,6 +187,7 @@ while (repetir) {
             registrarEstudiante()
             break;
         case "2":
+            buscarPorDocumento()
             break;
         case "3":
             break;
@@ -218,6 +220,21 @@ function registrarEstudiante() {
         nota: notaMateria,
         estado: estadoMatricula
     }
-    estudiantes.unshift(estudiante)
+    estudiantes.push(estudiante)
     console.log(estudiantes);
 }
+
+function buscarPorDocumento() {
+    documentoEstudiante = prompt("Ingrese el documento del estudiante: ")
+    estudiantes.find((estudiante) => {
+        if (documentoEstudiante === estudiante.documento) {
+            console.log(estudiante);
+        }
+    })
+
+    /* arreglo.metodo((variable)=> condición) */
+    /* arreglo.map((variable)=> condición) */
+    /* arreglo.find((variable)=> condición) */
+    /* arreglo.filter((variable)=> condición) */
+}
+
