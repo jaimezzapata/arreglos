@@ -36,6 +36,7 @@
         .some() -> Método que recorre y devuelve un ÚNICO elemento (true o false) si cumple una condición
         .forEach() -> Método que recorre y transforma un arreglo
         .every() -> Método que recorre un arreglo y retorna tue o false si todos los elementos cumplen una condición o no
+        .reduce()
     Métodos de consulta
         .include() -> Método que valida si se incluye dentro de un arreglo
         .length() -> Define el tamaño de un arreglo
@@ -180,13 +181,13 @@ let estudiantes = [
         nombre: "Jaime Zapata",
         documento: 10203040,
         estado: "M",
-        nota: 4
+        nota: 1
     },
     {
         nombre: "Daniela Aguiar",
         documento: 12345677,
         estado: "M",
-        nota: 4
+        nota: 2
     },
     {
         nombre: "Daniela Aguiar",
@@ -213,10 +214,13 @@ while (repetir) {
             buscarPorNombre()
             break;
         case "4":
+            estudiantesReprobados()
             break;
         case "5":
+            estudiantesAprobados()
             break;
         case "6":
+            eliminarEstudiante()
             break;
         case "7":
             break;
@@ -267,3 +271,34 @@ function buscarPorNombre() {
         }
     })
 }
+
+function estudiantesReprobados() {
+    let reprobados = estudiantes.filter((estudiante) => estudiante.nota < 3)
+    console.log(reprobados);
+}
+
+function estudiantesAprobados() {
+    let aprobados = estudiantes.filter((estudiante) => estudiante.nota >= 3)
+    console.log(aprobados);
+}
+
+
+function eliminarEstudiante() {
+    documentoEstudiante = prompt("Ingrese el documento del estudiante: ")
+    let estudianteEncontrado = estudiantes.find((estudiante) => documentoEstudiante == estudiante.documento)
+    let posicion = estudiantes.indexOf(estudianteEncontrado)
+    estudiantes.splice(posicion, 3)
+    console.log(estudiantes);    
+}
+
+
+function editarEstudiante(){
+    documentoEstudiante = prompt("Ingrese el documento del estudiante: ")
+    let estudianteEncontrado = estudiantes.find((estudiante) => documentoEstudiante == estudiante.documento)
+    /* condicional */
+}
+
+function ordenarPorNombre(){
+    estudiantes.sort(/* valorUno, valorDos */)
+}
+/* Editar */
